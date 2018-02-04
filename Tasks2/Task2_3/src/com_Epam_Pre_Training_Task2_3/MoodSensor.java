@@ -55,7 +55,7 @@ public class MoodSensor {
 	}
 
 	public static char[] checkMood(int n) throws UnsupportedEncodingException {
-		char emodji[] = null;
+		char emodji[];
 		char firstSymbolsPart, secondSymbolsPart;
 		int codePoint;
 		switch (n) {
