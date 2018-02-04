@@ -8,11 +8,15 @@ public class RoundArea {
 		// TODO Автоматически созданная заглушка метода
 		double radius1 = 3;//радиус первого круга
 		double radius2 = 1;//радиус второго круга
-		double roundArea = Math.abs(countCircleArea(radius1) - countCircleArea(radius2));
+		double roundArea = countRoundAread(radius1, radius2);
 		System.out.println("Площадь кольца равна: " + roundArea);
 	}
 
 	public static double countCircleArea(double radius) {
 		return Math.PI * radius * radius;
+	}
+	public static double countRoundAread(double radius1,double radius2)
+	{
+		return Math.abs(countCircleArea(radius1) - countCircleArea(radius2));
 	}
 }
