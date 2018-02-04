@@ -5,11 +5,10 @@ import java.util.Scanner;
 public class Numbers {
 
 	public static void main(String[] args) {
-		int N;
 		System.out.println("***Название числа в виде строки***");
 		Scanner in = new Scanner(System.in);
 		System.out.print("Введите число:");
-		N = in.nextInt();
+		int N = in.nextInt();
 		System.out.println("Число в виде строки: " + toString(N));
 	}
 
