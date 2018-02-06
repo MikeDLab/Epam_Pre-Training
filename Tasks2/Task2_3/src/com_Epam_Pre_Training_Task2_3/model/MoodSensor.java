@@ -1,61 +1,66 @@
-package com_Epam_Pre_Training_Task2_3;
+package com_Epam_Pre_Training_Task2_3.model;
 
 import java.io.UnsupportedEncodingException;
 import java.math.*;
 import java.util.Random;
 
 public class MoodSensor {
-	public static void main(String[] args) throws UnsupportedEncodingException {
-		int n = new Random().nextInt(10);
-		viewMood(n);
-	}
 
 	public static void viewMood(int n) throws UnsupportedEncodingException {
-		System.out.print(getMoodName(n));
-		System.out.print(checkMood(n)[0]);
-		System.out.print(checkMood(n)[1]);
+		
 	}
 
 	public static String getMoodName(int n) {
+		String mood = "";
 		switch (n) {
 		case 0: {// улыбка
-			return "Улыбчивое ";
+			mood = "Улыбчивое ";
+			break;
 		}
 		case 1: {// сонливое
-			return "Сонливое ";
+			mood = "Сонливое ";
+			break;
 		}
 		case 2: {// злое
-			return "Злое ";
+			mood = "Злое ";
+			break;
 		}
 		case 3: { // нейтральное
-			return "Нейтральное ";
+			mood = "Нейтральное ";
 		}
 		case 4: {// смущение
-			return "Смущение ";
+			mood = "Смущение ";
+			break;
 		}
 		case 5: { // стыд
-			return "Стыд ";
+			mood = "Стыд ";
+			break;
 		}
 		case 6: { // задумчивость
-			return "Задумчивость ";
+			mood = "Задумчивость ";
+			break;
 		}
 		case 7: {// разочарование
-			return "Разочарование ";
+			mood = "Разочарование ";
+			break;
 		}
 		case 8: {// страх
-			return "Страх ";
+			mood = "Страх ";
+			break;
 		}
 		case 9: {// удивление
-			return "Удивление ";
+			mood = "Удивление ";
+			break;
 		}
 		default:
-			return "";
-
+			mood = "";
+			break;
 		}
+		return mood;
 	}
 
 	public static char[] checkMood(int n) throws UnsupportedEncodingException {
-		char emodji[];
+		char emodji[] = null;
 		char firstSymbolsPart, secondSymbolsPart;
 		int codePoint;
 		switch (n) {
@@ -64,42 +69,42 @@ public class MoodSensor {
 			secondSymbolsPart = 0xde00;
 			codePoint = Character.toCodePoint(firstSymbolsPart, secondSymbolsPart);
 			emodji = Character.toChars(codePoint);
-			return emodji;
+			break;
 		}
 		case 1: {// сонливое
 			firstSymbolsPart = 0xd83d;
 			secondSymbolsPart = 0xde2a;
 			codePoint = Character.toCodePoint(firstSymbolsPart, secondSymbolsPart);
 			emodji = Character.toChars(codePoint);
-			return emodji;
+			break;
 		}
 		case 2: {// злое
 			firstSymbolsPart = 0xd83d;
 			secondSymbolsPart = 0xde20;
 			codePoint = Character.toCodePoint(firstSymbolsPart, secondSymbolsPart);
 			emodji = Character.toChars(codePoint);
-			return emodji;
+			break;
 		}
 		case 3: { // нейтральное
 			firstSymbolsPart = 0xd83d;
 			secondSymbolsPart = 0xde10;
 			codePoint = Character.toCodePoint(firstSymbolsPart, secondSymbolsPart);
 			emodji = Character.toChars(codePoint);
-			return emodji;
+			break;
 		}
 		case 4: {// смущение
 			firstSymbolsPart = 0xd83d;
 			secondSymbolsPart = 0xde15;
 			codePoint = Character.toCodePoint(firstSymbolsPart, secondSymbolsPart);
 			emodji = Character.toChars(codePoint);
-			return emodji;
+			break;
 		}
 		case 5: { // стыд
 			firstSymbolsPart = 0xd83d;
 			secondSymbolsPart = 0xde16;
 			codePoint = Character.toCodePoint(firstSymbolsPart, secondSymbolsPart);
 			emodji = Character.toChars(codePoint);
-			return emodji;
+			break;
 		}
 		case 6: { // задумчивость
 			firstSymbolsPart = 0xd83d;
@@ -107,36 +112,37 @@ public class MoodSensor {
 			secondSymbolsPart = 0xde14;
 			codePoint = Character.toCodePoint(firstSymbolsPart, secondSymbolsPart);
 			emodji = Character.toChars(codePoint);
-			return emodji;
+			break;
 		}
 		case 7: {// разочарование
 			firstSymbolsPart = 0xd83d;
 			secondSymbolsPart = 0xde1e;
 			codePoint = Character.toCodePoint(firstSymbolsPart, secondSymbolsPart);
 			emodji = Character.toChars(codePoint);
-			return emodji;
+			break;
 		}
 		case 8: {// страх
 			firstSymbolsPart = 0xd83d;
 			secondSymbolsPart = 0xde31;
 			codePoint = Character.toCodePoint(firstSymbolsPart, secondSymbolsPart);
 			emodji = Character.toChars(codePoint);
-			return emodji;
+			break;
 		}
 		case 9: {// удивление
 			firstSymbolsPart = 0xd83d;
 			secondSymbolsPart = 0xde32;
 			codePoint = Character.toCodePoint(firstSymbolsPart, secondSymbolsPart);
 			emodji = Character.toChars(codePoint);
-			return emodji;
+			break;
 		}
 		default:
 			firstSymbolsPart = 0xd83d;
 			secondSymbolsPart = 0xde11;
 			codePoint = Character.toCodePoint(firstSymbolsPart, secondSymbolsPart);
 			emodji = Character.toChars(codePoint);
-			return emodji;
+			break;
 		}
+		return emodji;
 	}
 
 }

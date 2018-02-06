@@ -1,14 +1,7 @@
-package com_Epam_Pre_Training_Task2_4;
+package com_Epam_Pre_Training_Task2_4.model;
 
 public class NextDay {
 	public static int[] MonthDays = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
-
-	public static void main(String[] args) {
-		int day = 31;
-		int month = 12;
-		int year = 1992;
-		viewNextDay(day, month, year);
-	}
 
 	public static void viewNextDay(int day, int month, int year) {
 		System.out.println(indentifyTomorrowDay(day, month, year));
@@ -26,28 +19,29 @@ public class NextDay {
 	}
 
 	public static int indentifyTormorrowMonth(int day, int month, int year) {
+		int nextMonth = month;
 		MonthDays[1] = isLeapYear(year) ? 29 : 28;
 		if (MonthDays[month - 1] != day) {
-			return month;
 		} else if (month != 12) {
-			return ++month;
+			nextMonth++;
 		} else {
-			return 1;
+			nextMonth = 1;
 		}
+		return nextMonth;
 	}
 
 	public static int indentifyTormorrowYear(int day, int month, int year) {
+		int nextYear = year;
 		MonthDays[1] = isLeapYear(year) ? 29 : 28;
 		if (MonthDays[month - 1] != day) {
-			return year;
 		} else if (month != 12) {
-			return year;
 		} else {
 			return ++year;
 		}
+		return nextYear;
 	}
 
 	public static boolean isLeapYear(int year) {
-		return (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) ? true : false;
+		return (year % 4 == 0 && year % 100 != 0 || year % 400 == 0);
 	}
 }
