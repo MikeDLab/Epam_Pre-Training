@@ -12,9 +12,9 @@ public class Main {
 		System.out.println("***Название числа в виде строки***");
 		Scanner in = new Scanner(System.in);
 		System.out.print("Введите число:");
-		int N = in.nextInt();
-		String number = Numbers.toString(N);
-		View.printNumberInString(number);
+		int number = in.nextInt();
+		String numberInString = Numbers.toString(number);
+		View.printNumberInString(numberInString);
 	}
 
 }

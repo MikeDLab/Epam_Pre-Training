@@ -10,9 +10,9 @@ public class Main {
 
 	public static void main(String[] args) throws UnsupportedEncodingException {
 		// TODO Автоматически созданная заглушка метода
-		int n = new Random().nextInt(10);
-		char[] emodji = MoodSensor.checkMood(n);
-		String mood = MoodSensor.getMoodName(n);
+		int number = new Random().nextInt(10);
+		char[] emodji = MoodSensor.checkMood(number);
+		String mood = MoodSensor.getMoodName(number);
 		View.printMood(emodji, mood);
 	}
 

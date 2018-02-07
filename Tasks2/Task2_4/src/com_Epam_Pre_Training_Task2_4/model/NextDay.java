@@ -3,12 +3,6 @@ package com_Epam_Pre_Training_Task2_4.model;
 public class NextDay {
 	public static int[] MonthDays = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
 
-	public static void viewNextDay(int day, int month, int year) {
-		System.out.println(indentifyTomorrowDay(day, month, year));
-		System.out.println(indentifyTormorrowMonth(day, month, year));
-		System.out.println(indentifyTormorrowYear(day, month, year));
-	}
-
 	public static int indentifyTomorrowDay(int day, int month, int year) {
 		MonthDays[1] = isLeapYear(year) ? 29 : 28;
 		if (MonthDays[month - 1] != day) {

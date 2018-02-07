@@ -5,11 +5,6 @@ import java.math.*;
 import java.util.Random;
 
 public class MoodSensor {
-
-	public static void viewMood(int n) throws UnsupportedEncodingException {
-		
-	}
-
 	public static String getMoodName(int n) {
 		String mood = "";
 		switch (n) {
