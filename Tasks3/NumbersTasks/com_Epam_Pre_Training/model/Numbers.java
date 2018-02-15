@@ -81,15 +81,15 @@ public class Numbers {
 	public static boolean isPerfect(int number) throws NaturalNumberException {
 		validateOnNatural(number);
 		int sumDivisors = 0;
-		int divisor = 1;
-		while (divisor != number) {
+		int maxDiv = number / 2;
+		for (int divisor = 1; divisor <= maxDiv; divisor++) {
 			if (number % divisor == 0) {
 				sumDivisors += divisor;
 			}
-			divisor++;
 		}
 		return sumDivisors == number;
 	}
+
 	public static void validateOnNatural(int... numbers) throws NaturalNumberException {
 		for (int i = 0; i < numbers.length; i++) {
 			if (numbers[i] < 1) {
