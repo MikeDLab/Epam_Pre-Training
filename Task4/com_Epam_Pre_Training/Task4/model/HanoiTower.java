@@ -1,11 +1,9 @@
 package com_Epam_Pre_Training.Task4.model;
 
 public class HanoiTower {
-	public static String result = "";
+	private static String result = "";
 
-	private static String resolveHanoiTower(int ringsQuantity, char from, char to, char buffer)
-			throws NaturalNumberException {
-		Validator.validateOnNatural(ringsQuantity);
+	private static String resolveHanoiTower(int ringsQuantity, char from, char to, char buffer) {
 		if (ringsQuantity == 1) {
 			result += from + "->" + to + "\n";
 		} else {
@@ -16,8 +14,7 @@ public class HanoiTower {
 		return result;
 	}
 
-	public static String toStringHahoiTower(int ringsQuantity, char from, char to, char buffer)
-			throws NaturalNumberException {
+	public static String toStringHahoiTower(int ringsQuantity, char from, char to, char buffer) {
 		return resolveHanoiTower(ringsQuantity, from, to, buffer);
 	}
 }

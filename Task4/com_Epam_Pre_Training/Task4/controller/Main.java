@@ -1,10 +1,7 @@
 package com_Epam_Pre_Training.Task4.controller;
 
 import com_Epam_Pre_Training.Task4.model.HanoiTower;
-import com_Epam_Pre_Training.Task4.model.NaturalNumberException;
 import com_Epam_Pre_Training.Task4.model.Numbers;
-import com_Epam_Pre_Training.Task4.model.Validator;
-import com_Epam_Pre_Training.Task4.model.ZeroNumberException;
 import com_Epam_Pre_Training.Task4.view.View;
 
 public class Main {
@@ -18,7 +15,7 @@ public class Main {
 		char from = 'A';
 		char to = 'B';
 		char buffer = 'C';
-		int numberFib = 4;
+		int numberFib = -1;
 		executeFirstTask(number);
 		executeSecondTask(num, pow);
 		executeThirdTask(number, sum);
@@ -32,6 +29,7 @@ public class Main {
 	}
 
 	public static void executeSecondTask(int number, int power) throws ZeroNumberException {
+		Validator.validateOnZeroValue(number);
 		try {
 			View.view(number + " в степени " + power + " == " + Numbers.pow(number, power));
 		} catch (StackOverflowError e) {
@@ -40,6 +38,7 @@ public class Main {
 	}
 
 	public static void executeThirdTask(int number, int sum) throws NaturalNumberException {
+		Validator.validateOnNatural(number, sum);
 		View.view("Равенство суммы цифр числа " + number + " и числа " + sum + " равно " + Numbers.equals(number, sum));
 	}
 
@@ -53,6 +52,7 @@ public class Main {
 
 	public static void executeFifthTask(int ringsQuantity, char from, char to, char buffer)
 			throws NaturalNumberException {
+		Validator.validateOnNatural(ringsQuantity);
 		try {
 			View.view(HanoiTower.toStringHahoiTower(ringsQuantity, from, to, buffer));
 		} catch (StackOverflowError e) {
