@@ -1,7 +1,5 @@
 package com_Epam_Pre_Training.Task5.Model.entity.cars;
 
-import com_Epam_Pre_Training.Task5.Model.entity.fuel.Fuel;
-
 public class PassengerCar extends Car {
 	int passengers;
 	int maxPassengers;

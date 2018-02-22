@@ -1,4 +1,4 @@
-package com_Epam_Pre_Training.Task5.Model.container;
+package com_Epam_Pre_Training.Task5.container;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -18,18 +18,12 @@ public class ArrayList<T> implements List<T> {
 
 	public ArrayList(int capacity) throws ImpossibleArraySize {
 		if (capacity < 0) {
-			throw new ImpossibleArraySize("Невозможный размер массива");
+			throw new ImpossibleArraySize("");
 		} else {
 			this.arrayList = new Object[capacity];
 			size = capacity;
 		}
 
-	}
-
-	private void checkIndex(int index) throws IndexOfBoundsException {
-		if (index >= size) {
-			throw new IndexOfBoundsException();
-		}
 	}
 
 	private void resizeArray(int newSize) {
@@ -144,17 +138,11 @@ public class ArrayList<T> implements List<T> {
 	public T get(int index) {
 		return (T) arrayList[index];
 	}
+
 	@Override
 	public T set(int index, T element) {
 		// TODO Автоматически созданная заглушка метода
-		try {
-			checkIndex(index);
-			arrayList[index] = element;
-		} catch (IndexOfBoundsException e) {
-			// TODO Автоматически созданный блок catch
-			e.printStackTrace();
-		}
-		return null;
+		return (T) (arrayList[index] = element);
 	}
 
 	@Override
@@ -175,17 +163,14 @@ public class ArrayList<T> implements List<T> {
 	@Override
 	public T remove(int index) {
 		// TODO Автоматически созданная заглушка метода
-		try {
-			checkIndex(index);
-		} catch (IndexOfBoundsException e) {
-			// TODO Автоматически созданный блок catch
-			return null;
+		if (index <= size) {
+			int numMoved = size - index - 1;
+			T removedValue = (T) arrayList[index];
+			System.arraycopy(arrayList, index + 1, arrayList, index, numMoved);
+			arrayList[--size] = null;
+			return removedValue;
 		}
-		int numMoved = size - index - 1;
-		T removedValue = (T) arrayList[index];
-		System.arraycopy(arrayList, index + 1, arrayList, index, numMoved);
-		arrayList[--size] = null;
-		return removedValue;
+		return null;
 	}
 
 	@Override
@@ -219,7 +204,7 @@ public class ArrayList<T> implements List<T> {
 
 	@Override
 	public List<T> subList(int fromIndex, int toIndex) {
-		// TODO Автоматически созданная заглушка метода
+		// TODO Автоматически созданная заглушка методаs
 		return null;
 	}
 

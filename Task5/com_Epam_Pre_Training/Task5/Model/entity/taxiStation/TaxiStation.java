@@ -2,8 +2,8 @@ package com_Epam_Pre_Training.Task5.Model.entity.taxiStation;
 
 import java.util.List;
 
-import com_Epam_Pre_Training.Task5.Model.container.ArrayList;
 import com_Epam_Pre_Training.Task5.Model.entity.cars.Car;
+import com_Epam_Pre_Training.Task5.container.ArrayList;
 
 public class TaxiStation {
 	private final String DEFAULT_NAME_STATION = "Taxi Station";

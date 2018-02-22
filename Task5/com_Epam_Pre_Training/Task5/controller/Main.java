@@ -1,9 +1,9 @@
 package com_Epam_Pre_Training.Task5.controller;
 
-import com_Epam_Pre_Training.Task5.Model.actions.CarGenerator;
-import com_Epam_Pre_Training.Task5.Model.container.ImpossibleArraySize;
 import com_Epam_Pre_Training.Task5.Model.entity.taxiStation.ManagerTaxiStation;
 import com_Epam_Pre_Training.Task5.Model.entity.taxiStation.TaxiStation;
+import com_Epam_Pre_Training.Task5.container.ImpossibleArraySize;
+import com_Epam_Pre_Training.Task5.generators.CarGenerator;
 import com_Epam_Pre_Training.Task5.view.View;
 
 public class Main {

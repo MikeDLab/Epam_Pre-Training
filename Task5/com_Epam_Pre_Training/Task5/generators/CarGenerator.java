@@ -1,4 +1,4 @@
-package com_Epam_Pre_Training.Task5.Model.actions;
+package com_Epam_Pre_Training.Task5.generators;
 
 import com_Epam_Pre_Training.Task5.Model.entity.cars.Car;
 import com_Epam_Pre_Training.Task5.Model.entity.cars.CargoCar;

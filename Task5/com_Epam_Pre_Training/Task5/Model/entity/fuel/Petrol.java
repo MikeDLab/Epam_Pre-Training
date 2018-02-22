@@ -5,6 +5,7 @@ public class Petrol extends Fuel {
 	public Petrol() {
 		this.type = "Petrol";
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		// TODO Автоматически созданная заглушка метода
@@ -17,12 +18,14 @@ public class Petrol extends Fuel {
 		Petrol object = (Petrol) obj;
 		return this.type == object.getType();
 	}
+
 	@Override
 	public int hashCode() {
 		// TODO Автоматически созданная заглушка метода
 		return super.hashCode();
 
 	}
+
 	@Override
 	public String toString() {
 		// TODO Автоматически созданная заглушка метода
