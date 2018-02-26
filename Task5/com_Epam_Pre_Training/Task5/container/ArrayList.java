@@ -1,40 +1,30 @@
 package com_Epam_Pre_Training.Task5.container;
 
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
-import java.util.ListIterator;
-
-public class ArrayList<T> implements List<T> {
+public class ArrayList<T> implements ContainerInterface<T> {
 	int DEFAULT_CAPACITY = 0;
-	private Object[] arrayList;
+	private T[] arrayList;
 	int size;
 
 	public ArrayList() {
-		this.arrayList = new Object[DEFAULT_CAPACITY];
+		this.arrayList = (T[]) new Object[DEFAULT_CAPACITY];
 		size = DEFAULT_CAPACITY;
 	}
 
-	public ArrayList(int capacity) throws ImpossibleArraySize {
+	public ArrayList(int capacity) {
 		if (capacity < 0) {
-			throw new ImpossibleArraySize("");
+			throw new ImpossibleArraySize();
 		} else {
-			this.arrayList = new Object[capacity];
+			this.arrayList = (T[]) new Object[capacity];
 			size = capacity;
 		}
 
 	}
 
 	private void resizeArray(int newSize) {
-		Object[] newArray = new Object[newSize];
+		T[] newArray = (T[]) new Object[newSize];
 		System.arraycopy(arrayList, 0, newArray, 0, size);
 		arrayList = newArray;
 		size = newSize;
-	}
-
-	boolean ensureCapacity(int addsize) {
-		return size > addsize;
 	}
 
 	@Override
@@ -55,33 +45,6 @@ public class ArrayList<T> implements List<T> {
 		return indexOf(o) >= 0;
 	}
 
-	@Override
-	public Iterator<T> iterator() {
-		// TODO Автоматически созданная заглушка метода
-		return null;
-	}
-
-	@Override
-	public Object[] toArray() {
-		// TODO Автоматически созданная заглушка метода
-		return Arrays.copyOf(arrayList, size);
-	}
-
-	@Override
-	public <T> T[] toArray(T[] a) {
-		// TODO Автоматически созданная заглушка метода
-		return null;
-	}
-
-	@Override
-	public boolean add(T e) {
-		// TODO Автоматически созданная заглушка метода
-		resizeArray(size + 1);
-		arrayList[size - 1] = e;
-		return true;
-	}
-
-	@Override
 	public boolean remove(Object o) {
 		// TODO Автоматически созданная заглушка метода
 		if (o != null) {
@@ -95,37 +58,6 @@ public class ArrayList<T> implements List<T> {
 		return false;
 	}
 
-	@Override
-	public boolean containsAll(Collection<?> c) {
-		// TODO Автоматически созданная заглушка метода
-		return false;
-	}
-
-	@Override
-	public boolean addAll(Collection<? extends T> c) {
-		// TODO Автоматически созданная заглушка метода
-		return false;
-	}
-
-	@Override
-	public boolean addAll(int index, Collection<? extends T> c) {
-		// TODO Автоматически созданная заглушка метода
-		return false;
-	}
-
-	@Override
-	public boolean removeAll(Collection<?> c) {
-		// TODO Автоматически созданная заглушка метода
-		return false;
-	}
-
-	@Override
-	public boolean retainAll(Collection<?> c) {
-		// TODO Автоматически созданная заглушка метода
-		return false;
-	}
-
-	@Override
 	public void clear() {
 		// TODO Автоматически созданная заглушка метода
 		for (int i = 0; i < size; i++) {
@@ -134,18 +66,21 @@ public class ArrayList<T> implements List<T> {
 		size = 0;
 	}
 
-	@Override
 	public T get(int index) {
-		return (T) arrayList[index];
+		if (index < size) {
+			return (T) arrayList[index];
+		}
+		throw new IndexOfBoundException();
 	}
 
-	@Override
 	public T set(int index, T element) {
 		// TODO Автоматически созданная заглушка метода
-		return (T) (arrayList[index] = element);
+		if (index < size) {
+			return (T) (arrayList[index] = element);
+		}
+		throw new IndexOfBoundException();
 	}
 
-	@Override
 	public void add(int index, T element) {
 		// TODO Автоматически созданная заглушка метода
 		if (index < size - 1) {
@@ -160,7 +95,6 @@ public class ArrayList<T> implements List<T> {
 		}
 	}
 
-	@Override
 	public T remove(int index) {
 		// TODO Автоматически созданная заглушка метода
 		if (index <= size) {
@@ -170,7 +104,7 @@ public class ArrayList<T> implements List<T> {
 			arrayList[--size] = null;
 			return removedValue;
 		}
-		return null;
+		throw new IndexOfBoundException();
 	}
 
 	@Override
@@ -185,27 +119,19 @@ public class ArrayList<T> implements List<T> {
 	}
 
 	@Override
-	public int lastIndexOf(Object o) {
+	public T add(T element) {
 		// TODO Автоматически созданная заглушка метода
-		return 0;
+		resizeArray(size + 1);
+		arrayList[size - 1] = element;
+		return element;
 	}
 
-	@Override
-	public ListIterator<T> listIterator() {
+	public void add(T... elements) {
 		// TODO Автоматически созданная заглушка метода
-		return null;
-	}
-
-	@Override
-	public ListIterator<T> listIterator(int index) {
-		// TODO Автоматически созданная заглушка метода
-		return null;
-	}
-
-	@Override
-	public List<T> subList(int fromIndex, int toIndex) {
-		// TODO Автоматически созданная заглушка методаs
-		return null;
+		for (int i = 0; i < elements.length; i++) {
+			resizeArray(size + 1);
+			arrayList[size - 1] = elements[i];
+		}
 	}
 
 }

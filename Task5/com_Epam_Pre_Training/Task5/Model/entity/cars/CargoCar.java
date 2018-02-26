@@ -3,25 +3,28 @@ package com_Epam_Pre_Training.Task5.Model.entity.cars;
 import com_Epam_Pre_Training.Task5.Model.entity.fuel.Fuel;
 
 public class CargoCar extends Car {
-	double maxCapacity;
-	double amountСargo;
-	double costOfUse;
-
-	public CargoCar(double _maxCapacity, double _amountCargo, int _cost, double _costOfUse, String _brand, Fuel _fuel,
-			double _tankCapacity, double _amountFuel, double _maxSpeed) {
-		this.type = "Cargo";
-		this.maxCapacity = _maxCapacity;
-		this.amountСargo = _amountCargo;
-		this.cost = _cost;
-		this.brand = _brand;
-		this.maxSpeed = _maxSpeed;
-		this.tankCapacity = _tankCapacity;
-		this.costOfUse = _costOfUse;
-		super.setFuel(_fuel);
-	}
+	protected double maxCapacity;
+	protected double amountСargo;
+	protected double costOfUse;
 
 	public CargoCar() {
 		this.type = "Cargo";
+	}
+
+	public CargoCar(double maxCapacity, double amountCargo, int cost, double costOfUse, String brand, String fuel,
+			double tankCapacity, double amountFuel, double maxSpeed) {
+		super(cost, brand, fuel, tankCapacity, maxSpeed);
+		this.type = "Cargo";
+		this.maxCapacity = maxCapacity;
+		this.amountСargo = amountCargo;
+		this.costOfUse = costOfUse;
+	}
+
+	public CargoCar(CargoCar car) {
+		super(car);
+		this.maxCapacity = car.getMaxCapacity();
+		this.amountСargo = car.getAmountСargo();
+		this.costOfUse = car.getCostOfUse();
 	}
 
 	public double getMaxCapacity() {
@@ -36,8 +39,8 @@ public class CargoCar extends Car {
 		return costOfUse;
 	}
 
-	public void setCostOfUse(double _costOfUse) {
-		this.costOfUse = _costOfUse;
+	public void setCostOfUse(double costOfUse) {
+		this.costOfUse = costOfUse;
 	}
 
 	public double getAmountСargo() {

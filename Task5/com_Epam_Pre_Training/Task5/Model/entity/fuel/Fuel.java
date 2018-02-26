@@ -1,6 +1,6 @@
 package com_Epam_Pre_Training.Task5.Model.entity.fuel;
 
-public abstract class Fuel {
+public  class Fuel {
 	protected String type;
 
 	public Fuel getFuel() {

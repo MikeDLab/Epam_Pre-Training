@@ -42,7 +42,7 @@ public class ManagerTaxiStation {
 	}
 
 	public void addCar(Car car) {
-		station.addCar(car);
+		station.getCarsList().add(car);
 	}
 
 	public String getName() {

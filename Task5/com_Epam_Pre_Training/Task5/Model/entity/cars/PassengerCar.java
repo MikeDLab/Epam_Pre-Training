@@ -1,28 +1,29 @@
 package com_Epam_Pre_Training.Task5.Model.entity.cars;
 
 public class PassengerCar extends Car {
-	int passengers;
-	int maxPassengers;
-	double costPerKilometer;
+	protected int passengers;
+	protected int maxPassengers;
+	protected double costPerKilometer;
 
 	public PassengerCar() {
 		this.type = "Passenger";
 	}
 
-	public PassengerCar(int _maxPassengers, int _passengers, double _costPerKm, int _cost, String _brand, String _fuel,
-			double _tankCapacity, double _maxSpeed) {
+	public PassengerCar(int maxPassengers, int passengers, double costPerKm, int cost, String brand, String fuel,
+			double tankCapacity, double maxSpeed) {
+		super(cost,brand,fuel,tankCapacity, maxSpeed);
 		this.type = "Passenger";
-		this.passengers = _passengers;
-		this.costPerKilometer = _costPerKm;
-		this.maxPassengers = _maxPassengers;
-		this.cost = _cost;
-		this.brand = _brand;
-		this.maxSpeed = _maxSpeed;
-		this.tankCapacity = _tankCapacity;
-		super.setFuel(_fuel);
-
+		this.passengers = passengers;
+		this.costPerKilometer = costPerKm;
+		this.maxPassengers = maxPassengers;
 	}
-
+	public PassengerCar(PassengerCar car)
+	{
+		super(car);
+		this.passengers = car.getPassengers();
+		this.maxPassengers = car.getMaxPassengers();
+		this.costPerKilometer = car.getCostPerKilometer();
+	}
 	public int getPassengers() {
 		return passengers;
 	}

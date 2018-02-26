@@ -8,7 +8,7 @@ import com_Epam_Pre_Training.Task5.view.View;
 
 public class Main {
 
-	public static void main(String[] args) throws ImpossibleArraySize {
+	public static void main(String[] args) {
 		executeTask();
 		
 	}

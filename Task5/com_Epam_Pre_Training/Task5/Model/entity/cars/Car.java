@@ -5,13 +5,34 @@ import com_Epam_Pre_Training.Task5.Model.entity.fuel.Electricity;
 import com_Epam_Pre_Training.Task5.Model.entity.fuel.Fuel;
 import com_Epam_Pre_Training.Task5.Model.entity.fuel.Petrol;
 
-public abstract class Car {
-	String type;
-	String brand;
-	Fuel fuel;
-	int cost;
-	double tankCapacity;
-	double maxSpeed;
+public class Car {
+	protected String type;
+	protected String brand;
+	protected Fuel fuel;
+	protected int cost;
+	protected double tankCapacity;
+	protected double maxSpeed;
+
+	public Car() {
+
+	}
+
+	public Car(int cost, String brand, String fuel, double tankCapacity, double maxSpeed) {
+		this.cost = cost;
+		this.brand = brand;
+		this.maxSpeed = maxSpeed;
+		this.tankCapacity = tankCapacity;
+		setFuel(fuel);
+	}
+
+	public Car(Car car) {
+		this.type = car.getType();
+		this.brand = car.getBrand();
+		this.fuel = car.getFuel();
+		this.cost = car.getCost();
+		this.tankCapacity = car.getTankCapacity();
+		this.maxSpeed = car.getMaxSpeed();
+	}
 
 	public String getType() {
 		return type;

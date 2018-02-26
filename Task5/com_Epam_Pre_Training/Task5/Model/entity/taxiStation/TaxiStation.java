@@ -4,11 +4,12 @@ import java.util.List;
 
 import com_Epam_Pre_Training.Task5.Model.entity.cars.Car;
 import com_Epam_Pre_Training.Task5.container.ArrayList;
+import com_Epam_Pre_Training.Task5.container.ContainerInterface;
 
 public class TaxiStation {
 	private final String DEFAULT_NAME_STATION = "Taxi Station";
 	private final int DEFAULT_MAX_CAR = 10;
-	private List<Car> carsList;
+	private ContainerInterface<Car> carsList;
 	private String nameStation;
 	private int maxCars = DEFAULT_MAX_CAR;
 	private ManagerTaxiStation manager;
@@ -22,7 +23,7 @@ public class TaxiStation {
 		carsList = new ArrayList<Car>();
 	}
 
-	public List<Car> getCarsList() {
+	public ContainerInterface<Car> getCarsList() {
 		return carsList;
 	}
 
@@ -50,15 +51,11 @@ public class TaxiStation {
 		return maxCars;
 	}
 
-	public void addCar(Car car) {
-		carsList.add(car);
-	}
-
 	public void setManager(ManagerTaxiStation _manager) {
 		this.manager = _manager;
 	}
-	public ManagerTaxiStation getManager()
-	{
+
+	public ManagerTaxiStation getManager() {
 		return manager;
 	}
 }
