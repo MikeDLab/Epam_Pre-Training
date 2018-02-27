@@ -13,7 +13,7 @@ public class StaticStack<T> extends AbstractStack<T> implements StackInterface<T
 		if (size >= 0) {
 			return (T) dataArray[size--];
 		}
-		throw new IndexOfBoundsException();
+		throw new EmptyContainerException();
 	}
 	public T push(T element) {
 		if (size <= maxSize) {

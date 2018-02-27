@@ -27,7 +27,7 @@ public class StaticQueue<T> extends AbstractQueue<T> implements QueueInterface<T
 			size--;
 			return (T) dataArray[first++];
 		}
-		throw new IndexOfBoundsException();
+		throw new EmptyContainerException();
 	}
 
 }
