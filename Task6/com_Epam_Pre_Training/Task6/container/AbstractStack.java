@@ -17,10 +17,10 @@ public abstract class AbstractStack<T> extends АbstractContainer<T> implements 
 	@Override
 	public T peek() {
 		// TODO Автоматически созданная заглушка метода
-		if (size >= 0) {
+		if (!isEmpty()) {
 			return (T) dataArray[size];
 		}
-		throw new IndexOfBoundsException();
+		throw new EmptyContainerException();
 	}
 
 }
