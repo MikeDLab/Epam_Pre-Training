@@ -1,4 +1,7 @@
-package com_Epam_Pre_Training.Task6.container;
+package com_Epam_Pre_Training.Task6.container.stack;
+
+import com_Epam_Pre_Training.Task6.container.exceptions.EmptyContainerException;
+import com_Epam_Pre_Training.Task6.container.exceptions.FullContainerException;
 
 public class StaticStack<T> extends AbstractStack<T> implements StackInterface<T> {
 	private T Push;

@@ -1,4 +1,7 @@
-package com_Epam_Pre_Training.Task6.container;
+package com_Epam_Pre_Training.Task6.container.queue;
+
+import com_Epam_Pre_Training.Task6.container.exceptions.EmptyContainerException;
+import com_Epam_Pre_Training.Task6.container.exceptions.FullContainerException;
 
 public class StaticQueue<T> extends AbstractQueue<T> implements QueueInterface<T> {
 	public StaticQueue() {

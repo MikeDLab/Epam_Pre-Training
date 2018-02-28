@@ -12,7 +12,7 @@ public abstract class AbstractLinkedContainer<T> extends АbstractContainer<T> i
 	{
 		super(size);
 	}
-	class Node {
+	public class Node {
 		private T o;
 		private Node next;
 		private Node prev;

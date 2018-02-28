@@ -1,6 +1,6 @@
 package com_Epam_Pre_Training.Task6.model;
 
-import com_Epam_Pre_Training.Task6.container.StaticStack;
+import com_Epam_Pre_Training.Task6.container.stack.StaticStack;
 
 public class StringChecker {
 	public static boolean isPalindrome(String str) {

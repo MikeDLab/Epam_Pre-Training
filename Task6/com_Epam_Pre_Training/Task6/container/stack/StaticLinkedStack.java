@@ -1,6 +1,9 @@
-package com_Epam_Pre_Training.Task6.container;
+package com_Epam_Pre_Training.Task6.container.stack;
 
+import com_Epam_Pre_Training.Task6.container.AbstractLinkedContainer;
 import com_Epam_Pre_Training.Task6.container.AbstractLinkedContainer.Node;
+import com_Epam_Pre_Training.Task6.container.exceptions.EmptyContainerException;
+import com_Epam_Pre_Training.Task6.container.exceptions.FullContainerException;
 
 public class StaticLinkedStack<T> extends AbstractLinkedContainer<T> implements StackInterface<T> {
 	public StaticLinkedStack() {

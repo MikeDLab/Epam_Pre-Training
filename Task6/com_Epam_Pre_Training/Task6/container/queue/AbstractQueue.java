@@ -1,4 +1,7 @@
-package com_Epam_Pre_Training.Task6.container;
+package com_Epam_Pre_Training.Task6.container.queue;
+
+import com_Epam_Pre_Training.Task6.container.АbstractContainer;
+import com_Epam_Pre_Training.Task6.container.exceptions.EmptyContainerException;
 
 public abstract class AbstractQueue<T> extends АbstractContainer<T> implements QueueInterface<T> {
 	protected int last = 0;

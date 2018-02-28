@@ -1,4 +1,6 @@
-package com_Epam_Pre_Training.Task6.container;
+package com_Epam_Pre_Training.Task6.container.queue;
+
+import com_Epam_Pre_Training.Task6.container.exceptions.IndexOfBoundsException;
 
 public class DynamicQueue<T> extends AbstractQueue<T> implements QueueInterface<T> {
 	public DynamicQueue() {

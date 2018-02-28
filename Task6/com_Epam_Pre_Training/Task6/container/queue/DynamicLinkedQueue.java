@@ -1,6 +1,8 @@
-package com_Epam_Pre_Training.Task6.container;
+package com_Epam_Pre_Training.Task6.container.queue;
 
+import com_Epam_Pre_Training.Task6.container.AbstractLinkedContainer;
 import com_Epam_Pre_Training.Task6.container.AbstractLinkedContainer.Node;
+import com_Epam_Pre_Training.Task6.container.exceptions.EmptyContainerException;
 
 public class DynamicLinkedQueue<T> extends AbstractLinkedContainer<T> implements QueueInterface<T> {
 	public DynamicLinkedQueue() {

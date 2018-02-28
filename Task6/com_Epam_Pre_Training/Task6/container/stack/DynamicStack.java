@@ -1,4 +1,6 @@
-package com_Epam_Pre_Training.Task6.container;
+package com_Epam_Pre_Training.Task6.container.stack;
+
+import com_Epam_Pre_Training.Task6.container.exceptions.IndexOfBoundsException;
 
 public class DynamicStack<T> extends AbstractStack<T>  implements StackInterface<T> {
 	T Push;
