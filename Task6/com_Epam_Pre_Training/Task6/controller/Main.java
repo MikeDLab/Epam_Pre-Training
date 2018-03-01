@@ -18,11 +18,10 @@ public class Main {
 		executeTask(str);
 		String str1 = "strs";
 		executeTask(str1);
-		}
-	public static void executeTask(String str)
-	{
-		boolean result = StringChecker.isPalindrome(str);
-		View.view(result);
+	}
+
+	public static void executeTask(String str) {
+		View.view(StringChecker.isPalindrome(str));
 	}
 
 }
