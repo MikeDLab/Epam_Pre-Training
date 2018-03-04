@@ -1,4 +1,6 @@
-package com_Epam_Pre_Training.Task5.Model.entity.cars;
+package com_Epam_Pre_Training.Task5.model.entity.cars;
+
+import com_Epam_Pre_Training.Task5.model.entity.fuel.Fuel;
 
 public class PassengerCar extends Car {
 	protected int passengers;
@@ -9,7 +11,7 @@ public class PassengerCar extends Car {
 		this.type = "Passenger";
 	}
 
-	public PassengerCar(int maxPassengers, int passengers, double costPerKm, int cost, String brand, String fuel,
+	public PassengerCar(int maxPassengers, int passengers, double costPerKm, int cost, String brand, Fuel fuel,
 			double tankCapacity, double maxSpeed) {
 		super(cost,brand,fuel,tankCapacity, maxSpeed);
 		this.type = "Passenger";

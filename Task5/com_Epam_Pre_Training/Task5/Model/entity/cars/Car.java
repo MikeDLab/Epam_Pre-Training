@@ -1,13 +1,11 @@
-package com_Epam_Pre_Training.Task5.Model.entity.cars;
+package com_Epam_Pre_Training.Task5.model.entity.cars;
 
-import com_Epam_Pre_Training.Task5.Model.entity.fuel.Diesel;
-import com_Epam_Pre_Training.Task5.Model.entity.fuel.Electricity;
-import com_Epam_Pre_Training.Task5.Model.entity.fuel.Fuel;
-import com_Epam_Pre_Training.Task5.Model.entity.fuel.Petrol;
+import com_Epam_Pre_Training.Task5.model.entity.fuel.Fuel;
 
 public class Car {
+	protected final String DEFAULT_BRAND = "Unknown brand";
 	protected String type;
-	protected String brand;
+	protected String brand = DEFAULT_BRAND;
 	protected Fuel fuel;
 	protected int cost;
 	protected double tankCapacity;
@@ -17,7 +15,7 @@ public class Car {
 
 	}
 
-	public Car(int cost, String brand, String fuel, double tankCapacity, double maxSpeed) {
+	public Car(int cost, String brand, Fuel fuel, double tankCapacity, double maxSpeed) {
 		this.cost = cost;
 		this.brand = brand;
 		this.maxSpeed = maxSpeed;
@@ -58,56 +56,28 @@ public class Car {
 		return maxSpeed;
 	}
 
-	public void setType(String _type) {
-		type = _type;
+	public void setType(String type) {
+		this.type = type;
 	}
 
-	public void setBrand(String _brand) {
-		brand = _brand;
+	public void setBrand(String brand) {
+		this.brand = brand;
 	}
 
-	public void setFuel(String _fuel) {
-		switch (_fuel) {
-		case "Petrol":
-			fuel = new Petrol();
-			break;
-		case "Diesel":
-			fuel = new Diesel();
-			break;
-		case "Electricity":
-			fuel = new Electricity();
-			break;
-		default:
-			fuel = new Petrol();
-		}
+	public void setFuel(Fuel fuel) {
+		this.fuel = fuel;
 	}
 
-	public void setFuel(Fuel _fuel) {
-		switch (_fuel.getType()) {
-		case "Petrol":
-			fuel = new Petrol();
-			break;
-		case "Diesel":
-			fuel = new Diesel();
-			break;
-		case "Electricity":
-			fuel = new Electricity();
-			break;
-		default:
-			fuel = new Petrol();
-		}
+	public void setCost(int cost) {
+		this.cost = cost;
 	}
 
-	public void setCost(int _cost) {
-		cost = _cost;
+	public void setTankCapacity(double capacity) {
+		this.tankCapacity = capacity;
 	}
 
-	public void setTankCapacity(double _capacity) {
-		tankCapacity = _capacity;
-	}
-
-	public void setMaxSpeed(double _maxSpeed) {
-		maxSpeed = _maxSpeed;
+	public void setMaxSpeed(double maxSpeed) {
+		this.maxSpeed = maxSpeed;
 	}
 
 	@Override

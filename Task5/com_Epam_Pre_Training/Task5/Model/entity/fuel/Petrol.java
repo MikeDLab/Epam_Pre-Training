@@ -1,4 +1,4 @@
-package com_Epam_Pre_Training.Task5.Model.entity.fuel;
+package com_Epam_Pre_Training.Task5.model.entity.fuel;
 
 public class Petrol extends Fuel {
 

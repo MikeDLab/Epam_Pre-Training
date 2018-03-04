@@ -1,6 +1,6 @@
-package com_Epam_Pre_Training.Task5.Model.entity.taxiStation;
+package com_Epam_Pre_Training.Task5.model.entity.taxistation;
 
-import com_Epam_Pre_Training.Task5.Model.entity.cars.Car;
+import com_Epam_Pre_Training.Task5.model.entity.cars.Car;
 
 public class ManagerTaxiStation {
 	private final String DEFAULT_MANAGER_NAME = "Manager";
